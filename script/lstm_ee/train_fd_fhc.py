@@ -38,10 +38,10 @@ config = join_dicts(
             'name'   : 'lstm_v3',
             'kwargs' : {
                 'batchnorm'    : True,
-                'layers_pre'   : [ 10, 10, 10 ],
-                'layers_post'  : [ 32, 32, 32, 32 ],
-                'lstm_units2d' : 20,
-                'lstm_units3d' : 20,
+                'layers_pre'   : [ 128, 128, 128 ],
+                'layers_post'  : [ 128, 128, 128 ],
+                'lstm_units2d' : 32,
+                'lstm_units3d' : 32,
                 'n_resblocks'  : 0,
             },
         },
@@ -76,7 +76,7 @@ config = join_dicts(
                 'cooldown' : 0
             },
         },
-        'seed'            : 1337,
+        'seed'            : 4590,
         'steps_per_epoch' : 250,
         'test_size'       : 200000,
         'weights' : {
