@@ -14,10 +14,12 @@ def draw():
     l2 = plt.axhspan( np.mean(dataset[:,plot_config["y_data"]]) - np.std(dataset[:,plot_config["y_data"]]),
                     np.mean(dataset[:,plot_config["y_data"]]) + np.std(dataset[:,plot_config["y_data"]]),
                     facecolor='#2ca02c', alpha=0.5)
+
     if plot_config["use_index_as_x"] == 1:
         x_coordinate = [ i for i in range(len(dataset[:,plot_config["y_data"]])) ]
         l1 = plt.scatter(x_coordinate[:], dataset[:,plot_config["y_data"]], c='#3977AF', marker='o')
         ticks_label = [ "[" + str(i) +"]" for i in x_coordinate]
+        plt.xticks(x_coordinate, ticks_label)
 
     elif plot_config["use_index_as_x"] == 0:
         l1 = plt.scatter(dataset[:,plot_config["x_data"]], dataset[:,plot_config["y_data"]], c='#3977AF', marker='o')
@@ -33,15 +35,12 @@ def draw():
                 'Model Performance',], loc = 'best')
     plt.xlabel(plot_config["x_label"])
     plt.ylabel(plot_config["y_label"])
-    plt.xticks(x_coordinate, ticks_label)
     plt.gca().yaxis.set_major_formatter(PercentFormatter(1, decimals=2, symbol=""))
-
+    plt.gcf().autofmt_xdate()
 
     #plt.show()
 
     plt.savefig(plot_config["output_file_name"])
     plt.close()
-
-
 
 draw()

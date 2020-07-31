@@ -1,0 +1,11 @@
+{
+    "file_loc": "/home/shaowei/lstm_ee_export/lstm_ee_l2/fd_fhc.txt",
+    "title": "Neutrino energy (TOTAL)",
+    "x_label": "['regularization(l2)']",
+    "y_label": "RMS [%]",
+    "use_index_as_x": 0,
+    "x_data": 0,
+    "y_data":1,
+    "output_file_name": "reg_l2.pdf"
+
+}
