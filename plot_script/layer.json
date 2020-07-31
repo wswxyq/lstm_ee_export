@@ -1,0 +1,10 @@
+{
+    "file_loc": "/home/shaowei/lstm_ee_export/lstm_adjust_layer/fd_fhc.txt",
+    "title": "Neutrino energy (TOTAL)",
+    "x_label": "['layer config']",
+    "y_label": "RMS [%]",
+    "use_index_as_x": 1,
+    "x_data": 0,
+    "y_data":1,
+    "output_file_name": "layer.pdf"
+}

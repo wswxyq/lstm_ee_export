@@ -36,7 +36,9 @@ def draw():
     plt.xlabel(plot_config["x_label"])
     plt.ylabel(plot_config["y_label"])
     plt.gca().yaxis.set_major_formatter(PercentFormatter(1, decimals=2, symbol=""))
-    plt.gcf().autofmt_xdate()
+    
+    if "autofmt_x_tick" in plot_config: 
+        plt.gcf().autofmt_xdate()
 
     #plt.show()
 

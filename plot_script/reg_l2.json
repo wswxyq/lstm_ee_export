@@ -6,6 +6,7 @@
     "use_index_as_x": 0,
     "x_data": 0,
     "y_data":1,
-    "output_file_name": "reg_l2.pdf"
+    "output_file_name": "reg_l2.pdf",
+    "autofmt_x_tick": ""
 
 }

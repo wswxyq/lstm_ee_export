@@ -3,9 +3,10 @@
     "title": "Neutrino energy (TOTAL)",
     "x_label": "['regularization(l1)']",
     "y_label": "RMS [%]",
-    "use_index_as_x": 1,
+    "use_index_as_x": 0,
     "x_data": 0,
     "y_data":1,
-    "output_file_name": "reg_l1.pdf"
+    "output_file_name": "reg_l1.pdf",
+    "autofmt_x_tick": ""
 
 }
