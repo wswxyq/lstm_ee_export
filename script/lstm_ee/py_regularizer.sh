@@ -1,4 +1,4 @@
-for regularization in `seq 0 0.0001 0.0020`; 
+for regularization in `seq 0.0020 0.0001 0.0040`; 
 do sed -i "s/'kwargs' : { 'l' : .\+ },/'kwargs' : { 'l' : ${regularization} },/g" train_fd_fhc.py &&
 python3 train_fd_fhc.py --cache &&
 sleep 10

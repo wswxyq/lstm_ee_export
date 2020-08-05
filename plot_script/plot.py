@@ -11,9 +11,18 @@ def draw():
         plot_config = json.load(f)
 
     dataset = np.loadtxt(plot_config["file_loc"])
-    l2 = plt.axhspan( np.mean(dataset[:,plot_config["y_data"]]) - np.std(dataset[:,plot_config["y_data"]]),
-                    np.mean(dataset[:,plot_config["y_data"]]) + np.std(dataset[:,plot_config["y_data"]]),
-                    facecolor='#2ca02c', alpha=0.5)
+    if ("mean_val" in plot_config) and ("std_val" in plot_config):
+        mean_value = plot_config["mean_val"]
+        std_value = plot_config["std_val"]
+    else:
+        mean_value = np.mean(dataset[:,plot_config["y_data"]])
+        std_value = np.std(dataset[:,plot_config["y_data"]])
+
+    l2 = plt.axhspan( mean_value - std_value,
+                mean_value + std_value,
+                facecolor='#2ca02c', alpha=0.5)
+    plt.axhline( y=mean_value, linewidth= 1, color="g" )
+
 
     if plot_config["use_index_as_x"] == 1:
         x_coordinate = [ i for i in range(len(dataset[:,plot_config["y_data"]])) ]
@@ -28,10 +37,9 @@ def draw():
         return
 
 
-    plt.axhline( y=np.mean(dataset[:,plot_config["y_data"]]), linewidth= 1, color="g" )
     plt.legend(handles = [l2, l1, ], \
-    labels = ['Mean: '+"{:.2f}".format(np.mean(dataset[:,plot_config["y_data"]]) * 100.0 )+
-            ', Stdev: '+ "{:.4f}".format(np.std(dataset[:,plot_config["y_data"]]) * 100.0 ) ,
+    labels = ['Mean: '+"{:.2f}".format(mean_value * 100.0 )+
+            ', Stdev: '+ "{:.4f}".format(std_value * 100.0 ) ,
                 'Model Performance',], loc = 'best')
     plt.xlabel(plot_config["x_label"])
     plt.ylabel(plot_config["y_label"])

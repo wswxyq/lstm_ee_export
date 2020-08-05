@@ -7,6 +7,8 @@
     "x_data": 0,
     "y_data":1,
     "output_file_name": "reg_l1.pdf",
-    "autofmt_x_tick": ""
+    "autofmt_x_tick": "",
+    "mean_val": 0.0947,
+    "std_val": 0.000365
 
 }
