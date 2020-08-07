@@ -65,7 +65,7 @@ config = join_dicts(
         'prong_sorters' : None,
         'regularizer'   : {
             'name'   : 'l2',
-            'kwargs' : { 'l' : 0.0040 },
+            'kwargs' : { 'l' : 0.0300 },
         },
         'schedule'     : {
             'name'   : 'standard',

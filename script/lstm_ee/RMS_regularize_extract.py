@@ -2,7 +2,7 @@ import numpy as np
 import os
 import re
 
-loc_dir = '/home/shaowei/lstm_ee_export/lstm_ee_l1'
+loc_dir = '/home/shaowei/lstm_ee_export/lstm_ee_l2_ex2'
 ffdirs=os.listdir( loc_dir + "/numu/mprod5/final/fd_fhc" )
 ffdirs.remove('train.log')
 
